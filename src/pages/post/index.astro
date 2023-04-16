@@ -1,24 +1,10 @@
 ---
-import Link from '../components/base/Link.astro'
-import Base from '../layouts/Base.astro'
-const posts = await Astro.glob('./post/*.mdx')
+import Base from '../../layouts/Base.astro'
+import Link from '../../components/base/Link.astro'
+const posts = await Astro.glob('./*.mdx')
 ---
 
 <Base>
-  <div class='mt-20 flex flex-col items-center gap-9'>
-    <div
-      class='h-48 w-48 overflow-hidden rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 p-1'
-    >
-      <img src='/favicon.svg' class='h-full w-full' />
-    </div>
-    <h2 class='text-3xl'>
-      Hello, I'm <span class='text-cyan-400'>Li Yizhuang</span>.
-    </h2>
-    <div class='w-full text-center text-xl leading-8'>
-      我是一名前端开发工程师，内容创作者，在这里，分享我作为前端开发者积累的知识，以及平时的一些喜闻乐见。
-    </div>
-  </div>
-
   <article class='mt-16'>
     <div class='mb-8 text-xl'>文章列表</div>
     <section class='grid gap-12 md:grid-cols-post'>

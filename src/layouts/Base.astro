@@ -1,0 +1,42 @@
+---
+import Footer from '../components/base/Footer.astro'
+import Header from '../components/base/Header.astro'
+import { siteTitle } from '../config'
+---
+
+<!DOCTYPE html>
+<html lang='zh' class='dark'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{siteTitle}</title>
+  </head>
+  <body class='bg-slate-900 text-gray-100'>
+    <div class='me-auto ms-auto min-h-screen pb-8 pe-4 ps-4'>
+      <Header />
+      <main class='container max-w-screen-md'><slot /></main>
+      <Footer />
+    </div>
+  </body>
+</html>
+
+<script is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme')
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark'
+    }
+    return 'light'
+  })()
+
+  if (theme === 'light') {
+    document.documentElement.classList.remove('dark')
+  } else {
+    document.documentElement.classList.add('dark')
+  }
+  window.localStorage.setItem('theme', theme)
+</script>

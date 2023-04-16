@@ -1,0 +1,20 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+type Props = HTMLAttributes<'a'>
+
+const { href, class: className, ...props } = Astro.props
+
+let { pathname } = Astro.url
+pathname = pathname === '/' ? '' : pathname
+let isActive = href === pathname || href === pathname.replace(/\/$/, '')
+---
+
+<a
+  class='inline-block'
+  href={href}
+  class:list={[className, { 'font-semibold scale-125': isActive }]}
+  {...props}
+>
+  <slot />
+</a>

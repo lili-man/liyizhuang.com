@@ -1,0 +1,12 @@
+---
+import { routers } from '../../config'
+import Link from './Link.astro'
+---
+
+<nav class='flex gap-8 py-6'>
+  {
+    routers.map(({ ...item }) => {
+      return <Link href={item.href}>{item.title}</Link>
+    })
+  }
+</nav>

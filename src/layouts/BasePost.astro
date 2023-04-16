@@ -1,0 +1,15 @@
+---
+import Base from './Base.astro'
+const { frontmatter } = Astro.props
+---
+
+<Base>
+  <article class='mt-24'>
+    <div class='mb-8 flex flex-col gap-4'>
+      <h2 class='text-3xl font-bold'>{frontmatter.title}</h2>
+      <p class='text-white'>{frontmatter.description}</p>
+    </div>
+    <hr class='my-8 divide-solid' />
+    <slot />
+  </article>
+</Base>

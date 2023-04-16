@@ -1,0 +1,12 @@
+---
+import { siteTitle } from '../../config'
+import HeaderNav from './HeaderNav.astro'
+import Link from './Link.astro'
+---
+
+<header class='container flex max-w-screen-md justify-between'>
+  <h1 class='py-6 font-heading text-xl font-bold'>
+    <Link href='/'>{siteTitle}</Link>
+  </h1>
+  <HeaderNav />
+</header>

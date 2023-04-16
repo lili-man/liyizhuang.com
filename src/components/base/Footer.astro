@@ -1,0 +1,40 @@
+---
+import { beianGN, beianICP, footerNav, siteTitle } from '../../config'
+import Link from './Link.astro'
+---
+
+<header class='container mt-16 max-w-screen-md'>
+  <hr class='my-8 divide-solid' />
+  <div class='flex justify-between'>
+    {
+      footerNav.map(({ items }) => {
+        return (
+          <ul>
+            {items.map(({ ...item }, index) => {
+              return (
+                <li class:list={[{ 'mt-4': index }]}>
+                  <Link href={item.href}>{item.title}</Link>
+                </li>
+              )
+            })}
+          </ul>
+        )
+      })
+    }
+  </div>
+  <div class='mt-12 text-center text-slate-500'>
+    <p class='mb-2 text-xs'>© 2023 {siteTitle} 版权所有</p>
+    <p class='text-xs'>
+      <Link href={beianGN.href} target='_blank'>
+        {beianGN.text}
+      </Link>
+      <Link
+        class='sm:ml-2 sm:border-l sm:border-slate-500 sm:pl-2 dark:sm:border-slate-500'
+        href='https://beian.miit.gov.cn'
+        target='_blank'
+      >
+        {beianICP}
+      </Link>
+    </p>
+  </div>
+</header>
