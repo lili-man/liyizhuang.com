@@ -20,6 +20,15 @@ import { siteTitle } from '../config'
       <main class='container max-w-screen-md'><slot /></main>
       <Footer />
     </div>
+    <script src="https://tam.cdn-go.cn/aegis-sdk/latest/aegis.min.js"></script>
+    <script is:inline>
+    const aegis = new Aegis({
+        id: 'dWVxJTvjww9eOEq34G',
+        reportApiSpeed: true,
+        reportAssetSpeed: true,
+        hostUrl: 'https://rumt-zh.com',
+      });
+    </script>
   </body>
 </html>
 
