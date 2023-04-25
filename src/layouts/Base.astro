@@ -9,7 +9,7 @@ import { siteTitle } from '../config'
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
-    <meta name="baidu-site-verification" content="codeva-HJp6gdG5RV" />
+    <meta name='baidu-site-verification' content='codeva-HJp6gdG5RV' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
     <title>{siteTitle}</title>
@@ -20,14 +20,15 @@ import { siteTitle } from '../config'
       <main class='container max-w-screen-md'><slot /></main>
       <Footer />
     </div>
-    <script src="https://tam.cdn-go.cn/aegis-sdk/latest/aegis.min.js"></script>
+    <script is:inline src='https://tam.cdn-go.cn/aegis-sdk/latest/aegis.min.js'
+    ></script>
     <script is:inline>
-    const aegis = new Aegis({
+      const aegis = new Aegis({
         id: 'dWVxJTvjww9eOEq34G',
         reportApiSpeed: true,
         reportAssetSpeed: true,
         hostUrl: 'https://rumt-zh.com',
-      });
+      })
     </script>
   </body>
 </html>
