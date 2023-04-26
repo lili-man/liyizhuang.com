@@ -18,6 +18,10 @@ export const routers = [
     title: '作品',
     href: '/work',
   },
+  {
+    title: '工具',
+    href: '/tools',
+  },
 ]
 
 export const footerNav = [

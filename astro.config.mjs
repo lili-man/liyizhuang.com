@@ -3,9 +3,10 @@ import tailwind from '@astrojs/tailwind'
 import prefetch from '@astrojs/prefetch'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
-import { EnumChangefreq } from 'sitemap';
-
+import { EnumChangefreq } from 'sitemap'
+import react from '@astrojs/react'
 const lastmod = new Date().toString()
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://liyizhuang.com',
@@ -25,6 +26,9 @@ export default defineConfig({
       changefreq: EnumChangefreq.WEEKLY,
       priority: 1,
       serialize(item) {
+        if (/tools/.test(item.url)) {
+          return undefined
+        }
         if (/work/.test(item.url)) {
           item.changefreq = EnumChangefreq.WEEKLY
           item.lastmod = lastmod
@@ -38,5 +42,6 @@ export default defineConfig({
         return item
       },
     }),
+    react(),
   ],
 })
