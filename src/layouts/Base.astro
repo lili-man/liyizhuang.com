@@ -13,6 +13,27 @@ import { siteTitle } from '../config'
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
     <title>{siteTitle}</title>
+    <script is:inline>
+      const theme = (() => {
+        if (
+          typeof localStorage !== 'undefined' &&
+          localStorage.getItem('theme')
+        ) {
+          return localStorage.getItem('theme')
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark'
+        }
+        return 'light'
+      })()
+
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark')
+      } else {
+        document.documentElement.classList.add('dark')
+      }
+      window.localStorage.setItem('theme', theme)
+    </script>
   </head>
   <body class='bg-slate-900 text-gray-100'>
     <div class='me-auto ms-auto min-h-screen pb-8 pe-4 ps-4'>
@@ -23,31 +44,20 @@ import { siteTitle } from '../config'
     <script is:inline src='https://tam.cdn-go.cn/aegis-sdk/latest/aegis.min.js'
     ></script>
     <script is:inline>
+      const hostname = window.location.hostname
+      const env =
+        hostname === 'localhost'
+          ? Aegis.environment.local
+          : hostname === 'liyizhuang.com'
+          ? Aegis.environment.production
+          : Aegis.environment.others
       const aegis = new Aegis({
         id: 'dWVxJTvjww9eOEq34G',
         reportApiSpeed: true,
         reportAssetSpeed: true,
         hostUrl: 'https://rumt-zh.com',
+        env,
       })
     </script>
   </body>
 </html>
-
-<script is:inline>
-  const theme = (() => {
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-      return localStorage.getItem('theme')
-    }
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark'
-    }
-    return 'light'
-  })()
-
-  if (theme === 'light') {
-    document.documentElement.classList.remove('dark')
-  } else {
-    document.documentElement.classList.add('dark')
-  }
-  window.localStorage.setItem('theme', theme)
-</script>

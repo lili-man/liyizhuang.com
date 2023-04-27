@@ -4,5 +4,26 @@ import Base from '../../layouts/Base.astro'
 ---
 
 <Base>
-  <Link href='/tools/images/upload'>点击上传图片</Link>
+  <section class='body-font'>
+    <!-- <div class='container mx-auto px-5 py-24'> -->
+    <div class='-m-2 flex flex-wrap'>
+      <div class='w-full p-2 md:w-1/2 lg:w-1/3'>
+        <Link
+          class='flex h-full items-center rounded-lg border border-gray-500 p-4'
+          href='/tools/images/upload'
+        >
+          <!-- <img
+            alt='team'
+            class='mr-4 h-16 w-16 flex-shrink-0 rounded-full bg-gray-100 object-cover object-center'
+            src='https://dummyimage.com/80x80'
+          /> -->
+          <div class='flex-grow'>
+            <h2 class='title-font font-medium'>上传图片</h2>
+            <!-- <p class='text-gray-500'>UI Designer</p> -->
+          </div>
+        </Link>
+      </div>
+    </div>
+    <!-- </div> -->
+  </section>
 </Base>
