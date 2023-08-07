@@ -1,9 +1,9 @@
 export const siteTitle = '前端技术记录'
-export const beianGN = {
-  text: '浙公网安备 33011002015568 号',
-  href: 'http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002015568',
-}
-export const beianICP = '豫ICP备 20003355号-1'
+// export const beianGN = {
+//   text: '浙公网安备 33011002015568 号',
+//   href: 'http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002015568',
+// }
+export const beianICP = '京ICP备 2023019965号-1'
 
 export const routers = [
   {
@@ -33,13 +33,13 @@ export const footerNav = [
     title: '其他站点',
     items: [
       {
-        title: '极致源于梦想(cn)',
-        href: 'https://lihaha.cn',
+        title: '宅宅的梦',
+        href: '',
         target: '_blank',
       },
       {
-        title: '极致源于梦想(cloud)',
-        href: 'https://lihaha.cloud',
+        title: '宅宅的梦',
+        href: '',
         target: '_blank',
       },
     ],
