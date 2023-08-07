@@ -1,4 +1,4 @@
-export const siteTitle = '前端技术记录'
+export const siteTitle = '宅宅的梦'
 // export const beianGN = {
 //   text: '浙公网安备 33011002015568 号',
 //   href: 'http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002015568',
